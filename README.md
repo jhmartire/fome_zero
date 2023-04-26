@@ -2,93 +2,95 @@
   <img src= logo.png alt="Sublime's custom image"/>
 </p>
 
-# Problema de Negócio
+# Business Problem
 
-A empresa Fome Zero é um marketplace de restaurantes. Ou seja, seu core business é facilitar o encontro e negociações de clientes e restaurantes. Os restaurantes fazem o cadastro dentro da plataforma da Fome Zero, que disponibiliza informações como endereço, tipo de culinária servida, se possui reservas, se faz entregas e também uma nota de avaliação dos serviços e produtos do restaurante, dentre outras informações.
+The company Fome Zero is a restaurant marketplace. In other words, its core business is to facilitate meetings and negotiations with customers and restaurants. Restaurants register within the Fome Zero platform, which provides information such as address, type of cuisine served, if they have reservations, if they make deliveries and also an evaluation note of the restaurant's services and products, among other information.
 
-O CEO da empresa foi recém contratado e precisa entender melhor o negócio para conseguir tomar as melhores decisões estratégicas e alavancar ainda mais a Fome Zero. Para isso, ele precisa que seja feita uma análise nos dados da empresa e que sejam gerados dashboards, a partir dessas análises, de modo a mapear a base de restaurantes cadastrados e entender o andamento do negócio por meio das seguintes informações:
 
-**📋 Visão geral**
+The company's CEO was recently hired and needs to understand the business better to be able to make the best strategic decisions and further leverage Zero Hunger. For this, he needs an analysis of the company's data and the generation of dashboards, based on these analyses, in order to map the base of registered restaurants and understand the progress of the business through the following information:
 
-  1. Quantidade de restaurantes cadastrados e onde estão localizados; 
-  2. Quantidade de países e cidades onde a Fome Zero atua;
-  3. Quantidade de culinárias ofertadas;
-  4. Quantitativo de restaurantes conforme suas características:
-     * Aceitam reserva?
-     * Aceitam pedidos online?
-     * Fazem entrega?
-  5. Quantitativo de avaliações feitas na plataforma;
-  6. Melhores restaurantes (maiores notas de avaliação).
+**📋 Overview**
+
+  1. Number of registered restaurants and where they are located;
+   2. Number of countries and cities where Fome Zero operates;
+   3. Number of cuisines offered;
+   4. Number of restaurants according to their characteristics:
+      * Do you accept reservation?
+      * Do you accept online orders?
+      * Do you deliver?
+   5. Number of assessments made on the platform;
+   6. Best restaurants (highest ratings).
     
-**🌍 Visão país**
+**🌍 Country Vision**
 
- 1. Quantidade de restaurantes cadastrados em cada país de atuação;
- 2. Quantidade de cidades onde a Fome Zero está presente nos países de atuação;
- 3. Diversidade gastronômica de cada país (quantidade de culinárias únicas ofertadas);
- 4. Países com maiores quantitativos de avaliações realizadas;
- 5. Nota média de avaliação dos serviços de cada país;
- 6. Média de custo dos países.
+  1. Number of registered restaurants in each country of operation;
+  2. Number of cities where Fome Zero is present in the countries where it operates;
+  3. Gastronomic diversity of each country (number of unique cuisines offered);
+  4. Countries with the highest number of evaluations performed;
+  5. Average evaluation score of the services in each country;
+  6. Average cost across countries.
     
-**🏨 Visão cidade**
+**🏨 City View**
 
- 1. Quais as cidades de cada país de atuação as quais contemplam o maior número de restaurantes cadastrados?
- 2. Cidades com as melhores e piores notas médias avaliativas e em que países estão;
- 3. Cidades com maior diversidade gastronômica;
- 4. Cidades com maiores custos e piores avaliações;
- 5. Cidades com menores custos e melhores avaliações.
+  1. Which cities in each country of operation have the highest number of registered restaurants?
+  2. Cities with the best and worst average ratings and which countries they are in;
+  3. Cities with greater gastronomic diversity;
+  4. Cities with higher costs and worse evaluations;
+  5. Cities with lower costs and better ratings.
     
-**🍴 Visão gastronômica**
- 1. Tipos de pratos que são a base da oferta da Fome Zero;
- 2. Pratos piores e melhores avaliados;
- 3. Pratos mais caros e piores avaliados;
- 4. Pratos mais baratos e melhores avaliados.
+**🍴 Gastronomic Vision**
 
-O desafio é responder a essas questões e transformar seus resultados em dashboards que permitam o rápido entendimento do andamento do negócio. Os dados da empresa podem ser obtidos no link do Kaggle abaixo (arquivo zomato.csv):
+  1. Types of dishes that are the basis of Fome Zero's offer;
+  2. Worst and best evaluated dishes;
+  3. Most expensive and worst evaluated dishes;
+  4. Cheapest and best rated dishes.
+
+The challenge is to answer these questions and turn your results into dashboards that allow a quick understanding of the business progress. Company data can be obtained from the Kaggle link below (zomato.csv file):
 https://www.kaggle.com/datasets/akashram/zomato-restaurants-autoupdated-dataset?resource=download&select=zomato.csv
 
-# Premissas do negócio
+# Business Assumptions
 
-1. O modelo de negócio assumido é um Marketplace;
-2. A base de dados não contém informações de data, portanto as análises não contemplam a dimensão temporal;
-3. As visões analíticas adotadas foram: país, cidade e gastronomia; 
-4. Foram excluídos da base restaurantes os quais apresentavam custo médio de prato para dois igual a 0 por não fazer sentido à análise;
-5. Dado que os países de atuação da Fome Zero possuem moedas diferentes optou-se por não fazer uniformização dos dados financeiros - a definição do quão barato ou caro pode ser um restaurante foi dada pela variável “prince_range”, dela se condicionou a variável “price_type” com os seguintes valores:
-    * 1 - Cheap (Barato);
-    * 2 - Normal;
-    * 3 - Expensive (Caro);
-    * 4 - Gourmet.
-6. Qualquer análise que contemple dados financeiros a moeda corrente do país será apresentada junto ao dado.
+1. The assumed business model is a Marketplace;
+2. The database does not contain date information, therefore the analyzes do not include the temporal dimension;
+3. The analytical views adopted were: country, city and gastronomy;
+4. Restaurants that had an average cost of a dish for two equal to 0 were excluded from the base because it did not make sense for the analysis;
+5. Given that the countries in which Fome Zero operates have different currencies, it was decided not to standardize the financial data - the definition of how cheap or expensive a restaurant can be was given by the variable “prince_range”, from which the variable “ price_type” with the following values:
+     * 1 - Cheap ;
+     * 2 - Normal;
+     * 3 - Expensive;
+     *4 - Gourmet.
+6. Any analysis that includes financial data in the country's currency will be presented together with the data.
 
-# Estratégia da solução
+# Solution Strategy
 
-1. As análises partiram da resolução das questões propostas pelo CEO segmentadas pelas visões país, cidade e gastronomia;
-2. Em termos de ferramental utilizou-se:
-    * Jupyter Notebook - Análises prévias e rascunho do script final;
-    * Bibliotecas de manipulação de dados - Pandas e Numpy;
-    * Bibliotecas de visualização de dados - Matplotlib, Plotly, Folium;
-    * Jupyter Lab - Script Python final;
-    * Streamlit e Streamlit Cloud- Visualização do dashboard e coloca-lo em produção.
+ 1. The analyzes started from the resolution of the questions proposed by the CEO segmented by the visions of country, city and gastronomy;
+ 2. In terms of tooling, the following were used:
+     * Jupyter Notebook - Preview analysis and final script draft;
+     * Data manipulation libraries - Pandas and Numpy;
+     * Data visualization libraries - Matplotlib, Plotly, Folium;
+     * Jupyter Lab - Ultimate Python Script;
+     * Streamlit and Streamlit Cloud- Visualization of the dashboard and put it in production.
 
-# Top 3 insights de dados
+# Top 3 Data Insights
 
-1. Apenas cerca da metade dos restaurantes que aceitam pedidos online também fazem entregas;
-2. O Brasil possui a pior operação: apenas 3 cidades cadastradas, todas figurando no top 5 das cidades piores avaliadas, o que o coloca também como o país de pior nota média de avaliação. É o único da América do Sul;
-3. Nenhuma das 10 culinárias mais ofertadas encontram-se entre as melhores avaliadas, pelos contrário, 6 delas estão entre as 20 mais caras e piores avaliadas (seafood, continental, pizza, italian, cafe e american).
+1. Only about half of the restaurants that accept online orders also deliver;
+2. Brazil has the worst operation: only 3 cities registered, all appearing in the top 5 of the worst evaluated cities, which also places it as the country with the worst average evaluation score. It is the only one in South America;
+3. None of the 10 most offered cuisines are among the best evaluated, on the contrary, 6 of them are among the 20 most expensive and worst evaluated (seafood, continental, pizza, Italian, cafe and American).
 
-# O produto final do projeto
+# The Final Product of the Project
 
-Dashboard online hospedado na Streamlit Cloud o qual pode ser acessado pelo link:
+Online dashboard hosted on Streamlit Cloud which can be accessed through the link:
 
 https://jhmartire-fome-zero-home.streamlit.app/
 
-# Conclusão
+# Conclusion
 
-O objetivo do projeto foi criar uma visualização de dados a qual permitisse o acompanhamento das principais características do negócio e de como elas se distribuem geograficamente.
+The objective of the project was to create a data visualization that would allow the monitoring of the main characteristics of the business and how they are geographically distributed.
 
-O marketplace Fome Zero tem atuação global com forte presença nos continentes asiático e norte americano apresentando significativa diversidade gastronômica tendo os pratos do norte da Índia como a base de seu cardápio. 
+The Fome Zero marketplace has a global presence with a strong presence in Asia and North America, offering significant gastronomic diversity with dishes from North India as the basis of its menu.
 
-# Próximos Passos
+# Next Steps
 
-1. Especializar a análise por país gerando métricas de acompanhamento mais local dos negócios de modo a tornar os processos decisórios mais precisos conforme as particularidades geográficas;
-2. Padronizar os dados financeiros e de avaliação de modo a tornar a comparação entre restaurantes e países mais justas/precisas na análise;
-3. Analisar o custo e/ou benefício de se expandir ou retrair a diversidade gastronômica considerando o preço dos pratos e as avaliações dos restaurantes.
+1. Specialize analysis by country, generating more local business monitoring metrics in order to make decision-making processes more precise according to geographic particularities;
+2. Standardize financial and evaluation data in order to make the comparison between restaurants and countries more fair/accurate in the analysis;
+3. Analyze the cost and/or benefit of expanding or contracting gastronomic diversity considering the price of the dishes and the evaluations of the restaurants.
