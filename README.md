@@ -79,7 +79,7 @@ https://www.kaggle.com/datasets/akashram/zomato-restaurants-autoupdated-dataset?
 
 Dashboard online hospedado na Streamlit Cloud o qual pode ser acessado pelo link:
 
-https://geova-spj-ftc-fome-zero-project.streamlit.app/
+https://jhmartire-fome-zero-home.streamlit.app/
 
 # Conclusão
 
