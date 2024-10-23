@@ -9,3 +9,4 @@ haversine==2.7.0
 streamlit-folium==0.7.0
 Pillow==9.3.0
 inflection==0.5.1
+altair>=4.0.0
